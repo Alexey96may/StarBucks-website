@@ -1,14 +1,20 @@
 <header class="header" id="header" aria-label="Header section">
     <div class="container header__container">
         <div class="logo">StarBucks</div>
-        <nav class="nav headerNav" id="headerNav">
-            <ul class="nav-list">
-                <li class="nav-item"><a href="#">Home</a></li>
-                <li class="nav-item"><a href="#select">Select</a></li>
-                <li class="nav-item"><a href="#shop">Shop</a></li>
+        <nav class="nav headerNav" id="headerNav" aria-label="Main navigation">
+            <ul class="nav-list" aria-label="A navigation list">
+                <li class="nav-item">
+                    <a href="#" aria-label="To Home section">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#select" aria-label="To Select section">Select</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#shop" aria-label="To Shop section">Shop</a>
+                </li>
             </ul>
         </nav>
-        <button class="burger" id="burger">
+        <button class="burger" id="burger" aria-label="Burger menu button">
             <svg
                 class="burger__sprite"
                 viewBox="0 0 43 22"
