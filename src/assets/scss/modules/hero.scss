@@ -1,0 +1,170 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+
+.hero {
+    padding: 1.6rem vars.$mainPadding 0;
+
+    &__container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: min(1rem, 2vw);
+    }
+}
+
+.hero__image-wrapper {
+    position: relative;
+    flex-basis: auto;
+}
+
+.hero__image {
+}
+
+.hero__sale {
+    @include mixins.position(absolute, -1, top, right, 0, 0);
+}
+
+.sale {
+    max-width: 39%;
+    max-height: 39%;
+
+    &__image {
+        display: block;
+        transform: rotateZ(320deg);
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(-15.52px 15.52px 5px rgba(20, 62, 40, 0.46));
+    }
+
+    &__number {
+        @include mixins.position(absolute, -1, top, left, 50%, 50%);
+        translate: -50% -50%;
+        font-size: clamp(1rem, 3.5cqw, 2.75rem);
+        width: 100%;
+        text-align: center;
+        color: vars.$lightTextColor;
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        transform: rotateZ(345deg);
+
+        @media (max-width: vars.$mediaTablet) {
+            font-size: 3cqw;
+        }
+        @media (max-width: 850px) {
+            font-size: 2.3cqw;
+        }
+        @media (max-width: vars.$mediaSmallTablet) {
+            font-size: 2cqw;
+        }
+    }
+}
+
+.hero__info {
+    display: flex;
+    flex-shrink: 2;
+    flex-direction: column;
+    gap: min(2.7rem, 5vw);
+    max-width: 574px;
+}
+
+.hero__main-info {
+    display: flex;
+    flex-direction: column;
+    gap: min(2.7rem, 5vw);
+}
+
+.hero__title {
+    font-size: vars.$titleFontSize;
+    color: vars.$lightTextColor;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.gradient-title {
+    @include mixins.linear-gradient(
+        223deg,
+        vars.$gradDarkColor 0%,
+        vars.$gradLightColor 100%
+    );
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+.hero__descr {
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+}
+
+.hero__button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.button {
+    padding: 1em 4em;
+    @include mixins.linear-gradient(
+        90deg,
+        vars.$gradLightColor 0%,
+        vars.$gradDarkColor 100%
+    );
+    font-size: 1.2rem;
+    color: vars.$lightTextColor;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    border-radius: 2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.button--dark {
+    padding: 1em 2.7em;
+    background: linear-gradient(#121517 0 0) padding-box,
+        linear-gradient(
+                135deg,
+                rgba(218, 218, 218, 0.5) 0%,
+                rgba(218, 218, 218, 0) 90%
+            )
+            border-box;
+    border: 1px solid transparent;
+    color: vars.$mainTextColor;
+    letter-spacing: -0.03em;
+}
+
+.stat {
+    display: flex;
+    gap: clamp(1em, 4vw, 2.3em);
+}
+
+.stat__item {
+    max-width: 127px;
+}
+
+.stat__number {
+    font-size: 3rem;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1px;
+}
+
+.stat__plus {
+    @include mixins.linear-gradient(
+        90deg,
+        vars.$gradLightColor 0%,
+        vars.$gradDarkColor 100%
+    );
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+.stat__descr {
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+}

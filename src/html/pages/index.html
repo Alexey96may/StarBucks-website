@@ -14,7 +14,9 @@
     </head>
     <body>
         <%=_.template(require('raw-loader!@/html/modules/header.html').default)()%>
-        <main class="main">Main</main>
+        <main class="main">
+            <%=_.template(require('raw-loader!@/html/modules/hero.html').default)()%>
+        </main>
         <%=_.template(require('raw-loader!@/html/modules/footer.html').default)()%>
     </body>
 </html>

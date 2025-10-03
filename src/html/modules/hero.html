@@ -1,16 +1,86 @@
 <section class="hero" id="hero" aria-label="Hero section">
-    <div class="container">
+    <div class="container hero__container">
         <div class="hero__image-wrapper" aria-label="Hero image">
-            <img class="hero__image" src="#" alt="StarBucks coffee" />
+            <picture>
+                <source srcset="./assets/img/hero-coffee.avif" />
+                <source srcset="./assets/img/hero-coffee.webp" />
+                <img
+                    class="hero__image"
+                    src="./assets/img/hero-coffee.png"
+                    alt="StarBucks coffee"
+                />
+            </picture>
+
+            <div class="hero__sale sale">
+                <picture>
+                    <source srcset="./assets/img/green-star.avif" />
+                    <source srcset="./assets/img/green-star.webp" />
+                    <img
+                        class="sale__image"
+                        src="./assets/img/green-star.png"
+                        alt="Green star"
+                    />
+                </picture>
+
+                <div class="sale__number">45%</div>
+            </div>
         </div>
         <div class="hero__info" aria-label="Hero offer field">
-            <h1 class="hero__title"><span class="gradient-title"></span></h1>
-            <p class="hero__descr"></p>
-            <div class="hero__button-wrapper" aria-label="Hero links">
-                <a class="button" aria-label="To select a coffee"
-                    >Select a coffee</a
-                >
-                <a class="button--dark" aria-label="To see more">More</a>
+            <div class="hero__main-info">
+                <h1 class="hero__title">
+                    New Cafe<br />
+                    by
+                    <span class="gradient-title">StarBucks</span>
+                </h1>
+                <p class="hero__descr">
+                    Have time to buy the most harmonious drinks in the new
+                    Starbucks coffee and don't forget about the discount!
+                </p>
+                <div class="hero__button-wrapper" aria-label="Hero links">
+                    <a
+                        class="button"
+                        href="#"
+                        title="Select a coffee"
+                        aria-label="To select a coffee"
+                        >Select a coffee</a
+                    >
+                    <a
+                        class="button button--dark"
+                        href="#"
+                        title="More"
+                        aria-label="To see more"
+                        >More</a
+                    >
+                </div>
+            </div>
+            <div class="stat" aria-label="Statistic field">
+                <div class="stat__item" aria-label="Statistic Premium Users">
+                    <div class="stat__number" aria-label="Number">
+                        9k
+                        <span class="stat__plus">+</span>
+                    </div>
+                    <div class="stat__descr" aria-label="Description">
+                        Premium Users
+                    </div>
+                </div>
+                <div class="stat__item" aria-label="Statistic Happy Customer">
+                    <div class="stat__number" aria-label="Number">
+                        2k
+                        <span class="stat__plus">+</span>
+                    </div>
+                    <div class="stat__descr" aria-label="Description">
+                        Happy Customer
+                    </div>
+                </div>
+                <div class="stat__item" aria-label="Statistic Awards Winning">
+                    <div class="stat__number" aria-label="Number">
+                        28
+                        <span class="stat__plus">+</span>
+                    </div>
+                    <div class="stat__descr" aria-label="Description">
+                        Awards Winning
+                    </div>
+                </div>
             </div>
         </div>
     </div>

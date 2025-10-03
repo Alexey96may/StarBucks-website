@@ -34,3 +34,7 @@
 @mixin linear-gradient($direction, $color-stops...) {
     background: linear-gradient($direction, $color-stops);
 }
+
+@mixin border-gradient($direction, $color-stops...) {
+    border-image: linear-gradient($direction, $color-stops) 1;
+}
