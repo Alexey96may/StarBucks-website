@@ -36,7 +36,7 @@ export class Burger {
 
     classesToggle(): void {
         this.#burgerButton?.classList.toggle("burger--cancel");
-        this.#headerNav?.classList.toggle("navigation--appear");
+        this.#headerNav?.classList.toggle("nav--appear");
         this.#body?.classList.toggle("body__fixed");
         // this.#bodyWrapper?.classList.toggle("wrapper--active");
     }

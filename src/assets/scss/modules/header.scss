@@ -2,20 +2,78 @@
 @use "../utils/mixins";
 
 .header {
+    padding: 48px vars.$mainPadding;
+
+    .header__container {
+        display: flex;
+        align-items: center;
+        gap: min(94px, 10vw);
+
+        @media (max-width: vars.$mediaSmallTablet) {
+            justify-content: space-between;
+        }
+    }
 }
-.container {
-}
-.header__container {
-}
+
 .logo {
+    @include mixins.linear-gradient(
+        90deg,
+        vars.$gradLightColor 0%,
+        vars.$gradDarkColor 100%
+    );
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
 }
+
 .nav {
+    transition: vars.$basicTrans;
+    @media (max-width: vars.$mediaSmallTablet) {
+        @include mixins.position(absolute, -1, top, left, 140px, -500px);
+        opacity: 0;
+        width: 100%;
+        visibility: hidden;
+    }
+
+    &.nav--appear {
+        @media (max-width: vars.$mediaSmallTablet) {
+            opacity: 1;
+            left: 0;
+            visibility: visible;
+        }
+    }
 }
+
 .nav-list {
+    display: flex;
+    align-items: center;
+    gap: min(94px, 10vw);
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        flex-direction: column;
+    }
 }
+
 .nav-item {
 }
+
 .burger {
+    background: none;
+    outline: none;
+    border: none;
+    display: none;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        display: block;
+    }
 }
+
 .burger__sprite {
+    display: block;
+    width: 43px;
+    height: 22px;
 }

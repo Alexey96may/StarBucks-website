@@ -6,8 +6,9 @@ html {
 }
 
 body {
-    background-color: vars.$lightBgColor;
+    background-color: vars.$blackBgColor;
     font-family: vars.$mainFontFamily;
+    font-weight: 400;
     color: vars.$mainTextColor;
 }
 
