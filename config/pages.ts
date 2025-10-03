@@ -5,8 +5,4 @@ export const pages: Page[] = [
         name: "index",
         chunks: ["main"],
     },
-    {
-        name: "About",
-        chunks: ["main"],
-    },
 ];
