@@ -1,33 +1,34 @@
 // Text Colors
-$mainTextColor: #000000;
-$darkTextColor: #e58311;
+$mainTextColor: #d9d9d9;
+$darkTextColor: #121517;
 $lightTextColor: #ffffff;
-$hoverLinkColor: #ad5f00;
+$hoverLinkColor: #35c66b;
 
 // Background Colors
 $lightBgColor: #ffffff;
-$blackBgColor: #000000;
-$darkBgColor: #e58311;
-$darkerBgColor: #ad5f00;
+$blackBgColor: #121517;
+$darkBgColor: #237249;
+$darkerBgColor: #134029;
+
+// Gradient Colors
+$gradLightColor: #35c66b;
+$gradDarkColor: #237249;
 
 // Border
-$borderColor: #e58211;
+$borderColor: #000000;
 $borderWidth: 1.5px;
 
-// Gradient
-$mainGrad: linear-gradient(111deg, #ff9d2d 0%, #ffd877 100%);
-
 // Fonts
-$mainFontFamily: "Kodchasan", "Open Sans", sans-serif;
-$basicFontSize: 16px;
+$mainFontFamily: "Montserrat", "Open Sans", sans-serif;
+$basicFontSize: 20px;
+$titleFontSize: 4rem;
 
 //  Borders
-$bigBorderRadius: 1.88rem; //30px
+$bigBorderRadius: 1.5rem; //30px
 
 //  Container
-$containerPadding: 15px;
-$smallContainerWidth: 1146px;
-$bigContainerWidth: 1500px;
+$containerPadding: 1rem;
+$containerWidth: 1253px;
 
 //  Transitions
 $basicTrans: all 0.3s;

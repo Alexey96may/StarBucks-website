@@ -30,3 +30,7 @@
         }
     }
 }
+
+@mixin linear-gradient($direction, $color-stops...) {
+    background: linear-gradient($direction, $color-stops);
+}
