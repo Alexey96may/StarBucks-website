@@ -11,7 +11,7 @@
                 />
             </picture>
 
-            <div class="hero__sale sale">
+            <div class="hero__sale sale" aria-label="Sale info">
                 <picture>
                     <source srcset="./assets/img/green-star.avif" />
                     <source srcset="./assets/img/green-star.webp" />
@@ -22,7 +22,18 @@
                     />
                 </picture>
 
-                <div class="sale__number">45%</div>
+                <div
+                    class="sale__number sale__number--pc"
+                    aria-label="Sale percent"
+                >
+                    45%
+                </div>
+                <div
+                    class="sale__number sale__number--mobile"
+                    aria-label="Plus"
+                >
+                    +
+                </div>
             </div>
         </div>
         <div class="hero__info" aria-label="Hero offer field">

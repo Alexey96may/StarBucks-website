@@ -1,0 +1,4 @@
+@function relSize($divider, $divisible, $ext: rem) {
+    $res: calc($divider / $divisible);
+    @return $res + $ext;
+}

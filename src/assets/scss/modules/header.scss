@@ -2,7 +2,15 @@
 @use "../utils/mixins";
 
 .header {
-    padding: 48px vars.$mainPadding;
+    padding: 48px 2rem;
+
+    @media (max-width: vars.$mediaMobile) {
+        padding: 34px 1rem;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        padding: 30px 1rem;
+    }
 
     .header__container {
         display: flex;
@@ -28,6 +36,14 @@
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.03em;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 1.4rem;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        font-size: 1.2rem;
+    }
 }
 
 .nav {

@@ -18,9 +18,34 @@ $gradDarkColor: #237249;
 $borderColor: #000000;
 $borderWidth: 1.5px;
 
+// Medias
+$mediaPC: 1400px;
+$mediaSmallPC: 1200px;
+$mediaTablet: 992px;
+$mediaSmallTablet: 768px;
+$mediaMobile: 576px;
+$mediaSmallMobile: 320px;
+
 // Fonts
 $mainFontFamily: "Montserrat", "Open Sans", sans-serif;
 $basicFontSize: 20px;
+
+@media (max-width: $mediaTablet) {
+    $basicFontSize: 18px;
+}
+
+@media (max-width: $mediaSmallTablet) {
+    $basicFontSize: 16px;
+}
+
+@media (max-width: $mediaMobile) {
+    $basicFontSize: 18px;
+}
+
+@media (max-width: $mediaSmallMobile) {
+    $basicFontSize: 14px;
+}
+
 $titleFontSize: 4rem;
 
 //  Borders
@@ -42,11 +67,3 @@ $basicOpacity: 0.8;
 // Paddings & Margins
 $mainPadding: 1rem;
 $mainMargin: 1rem;
-
-// Medias
-$mediaPC: 1400px;
-$mediaSmallPC: 1200px;
-$mediaTablet: 992px;
-$mediaSmallTablet: 768px;
-$mediaMobile: 576px;
-$mediaSmallMobile: 320px;
