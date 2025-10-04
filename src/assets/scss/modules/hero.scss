@@ -93,6 +93,7 @@
     @media (max-width: vars.$mediaSmallTablet) {
         gap: functions.relSize(36px, vars.$basicFontSize);
     }
+
     @media (max-width: vars.$mediaMobile) {
         gap: functions.relSize(36px, vars.$basicFontSize);
         max-width: 100%;
