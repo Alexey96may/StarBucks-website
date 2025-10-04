@@ -38,3 +38,7 @@
 @mixin border-gradient($direction, $color-stops...) {
     border-image: linear-gradient($direction, $color-stops) 1;
 }
+
+@mixin aspect($width, $height) {
+    aspect-ratio: calc($width / $height);
+}

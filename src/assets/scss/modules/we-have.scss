@@ -15,6 +15,25 @@
 
     .container {
         position: relative;
+
+        &::before {
+            content: "";
+            width: 32%;
+            @include mixins.aspect(400px, 225px);
+            @include mixins.linear-gradient(
+                245deg,
+                rgba(35, 114, 73, 0.55) 0%,
+                rgba(53, 198, 107, 0.73) 52%
+            );
+            filter: blur(177px);
+            @include mixins.position(absolute, -1, top, left, 50%, 0);
+            opacity: 0.29;
+            translate: -40% -50%;
+
+            @media (max-width: vars.$mediaMobile) {
+                display: none;
+            }
+        }
     }
 
     &__title-wrapper {
