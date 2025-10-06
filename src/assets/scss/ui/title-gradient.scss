@@ -1,0 +1,13 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+
+.gradient-title {
+    @include mixins.linear-gradient(
+        223deg,
+        vars.$gradDarkColor 0%,
+        vars.$gradLightColor 100%
+    );
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}

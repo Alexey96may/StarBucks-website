@@ -1,0 +1,93 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+@use "../utils/functions";
+
+.button {
+    padding: 1em 4em;
+    @include mixins.linear-gradient(
+        90deg,
+        vars.$gradLightColor 0%,
+        vars.$gradDarkColor 100%
+    );
+    font-size: 1.2rem;
+    color: vars.$lightTextColor;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    border-radius: 2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @media (max-width: vars.$mediaTablet) {
+        font-size: functions.relSize(20px, vars.$basicFontSize);
+        padding: min(0.75em, 2vw) min(3em, 7vw);
+    }
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: functions.relSize(16px, vars.$basicFontSize);
+        padding: functions.relSize(13px, vars.$basicFontSize)
+            functions.relSize(52px, vars.$basicFontSize);
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        padding: functions.relSize(10px, vars.$basicFontSize)
+            functions.relSize(32px, vars.$basicFontSize);
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        overflow: visible;
+        max-width: 200px;
+        text-align: center;
+        padding: functions.relSize(8px, vars.$basicFontSize)
+            functions.relSize(26px, vars.$basicFontSize);
+    }
+}
+
+.button--dark {
+    padding: 1em 2.7em;
+    background: linear-gradient(#121517 0 0) padding-box,
+        linear-gradient(
+                135deg,
+                rgba(218, 218, 218, 0.5) 0%,
+                rgba(218, 218, 218, 0) 90%
+            )
+            border-box;
+    border: 1px solid transparent;
+    color: vars.$mainTextColor;
+    letter-spacing: -0.03em;
+}
+
+.video-button {
+    border: none;
+
+    &__sprite {
+        stroke: vars.$lightBgColor;
+        width: 29px;
+        height: 28px;
+        vertical-align: middle;
+        margin-right: 3px;
+
+        @media (max-width: vars.$mediaMobile) {
+            width: 17px;
+            height: 16px;
+        }
+
+        @media (max-width: vars.$mediaSmallMobile) {
+            width: 14px;
+            height: 12px;
+        }
+    }
+
+    &__text {
+        letter-spacing: -0.02em;
+        vertical-align: middle;
+
+        @media (max-width: vars.$mediaMobile) {
+            font-size: functions.relSize(14px, vars.$basicFontSize);
+        }
+
+        @media (max-width: vars.$mediaSmallMobile) {
+            font-size: functions.relSize(11px, vars.$basicFontSize);
+        }
+    }
+}
