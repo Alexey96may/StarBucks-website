@@ -1,0 +1,90 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+@use "../utils/functions";
+@use "../ui/title-gradient";
+
+.events {
+    padding: 5rem 1rem 0;
+}
+
+.events__info {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: min(3.6rem, 8vw);
+    margin-bottom: 2.7rem;
+}
+
+.events__title {
+    font-size: 4rem;
+    color: vars.$lightTextColor;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    max-width: 366px;
+}
+
+.events__descr {
+    max-width: 456px;
+    line-height: 1.63;
+    letter-spacing: -0.02em;
+}
+
+.events__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.2rem;
+}
+
+.event {
+    position: relative;
+    grid-column: span 2;
+    border-radius: 1.5rem;
+    overflow: hidden;
+
+    &:nth-child(1) {
+        grid-column: span 3;
+    }
+
+    &:nth-child(2) {
+        grid-column: span 3;
+    }
+}
+
+.event__img-wrapper {
+}
+
+.event__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.event__info {
+    @include mixins.position(absolute, -1, top, left, 0, 26px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2.2rem;
+    max-width: 290px;
+}
+
+.event__title {
+    font-size: 1.6rem;
+    color: vars.$mainTextColor;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.event__button {
+    font-size: 1.2rem;
+    font-family: Montserrat;
+    color: vars.$mainTextColor;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    padding: 1rem 2.7rem;
+    border-radius: 4rem;
+}
