@@ -52,6 +52,13 @@
             translate: 0 -25%;
         }
 
+        @media (max-width: vars.$mediaSmallMobile) {
+            position: absolute;
+            right: 0;
+            top: 0;
+            translate: -50% -50%;
+        }
+
         &::before {
             content: "";
             width: 160%;
@@ -62,11 +69,23 @@
             translate: 50% 0;
             z-index: 0;
             filter: blur(140px);
+
+            @media (max-width: vars.$mediaTablet) {
+                width: 120%;
+                background: linear-gradient(
+                    245deg,
+                    rgba(35, 114, 73, 0.55) 0%,
+                    rgba(53, 198, 107, 0.73) 51.85%
+                );
+                opacity: 0.15;
+                filter: blur(50px);
+            }
         }
 
         .have-marker__title {
             font-size: clamp(1rem, 3.5vw, 2rem);
             z-index: 1;
+
             @media (max-width: vars.$mediaTablet) {
                 z-index: 3;
             }
@@ -74,6 +93,7 @@
 
         .have-marker__image {
             filter: drop-shadow(-11px 12px 25px rgba(1, 3, 2, 0.37));
+
             @media (max-width: vars.$mediaTablet) {
                 z-index: 2;
             }
@@ -124,6 +144,10 @@
         align-items: center;
         flex-basis: auto;
     }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        display: block;
+    }
 }
 
 .room-image-wrapper {
@@ -140,6 +164,11 @@
     @media (max-width: vars.$mediaMobile) {
         max-width: 163px;
         max-height: 240px;
+        z-index: 3;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        z-index: 1;
     }
 
     &::before {
@@ -151,6 +180,7 @@
         height: 100%;
         background-color: vars.$darkBgColor;
         clip-path: polygon(0% 0, 65% 0, 100% 25%, 100% 100%, 0% 100%);
+        z-index: 1;
     }
 
     &::after {
@@ -166,7 +196,14 @@
         border-radius: 50%;
         @include mixins.position(absolute, -1, bottom, left, 0, 0);
         translate: -25% 25%;
-        filter: blur(145.59999084472656px);
+        filter: blur(145px);
+        z-index: 0;
+        opacity: 30%;
+
+        @media (max-width: vars.$mediaTablet) {
+            width: 130%;
+            filter: blur(110px);
+        }
     }
 }
 
@@ -177,7 +214,8 @@
     clip-path: polygon(0% 0, 65% 0, 100% 25%, 100% 100%, 0% 100%);
     clip-rule: nonzero;
     translate: 45px -36px;
-    z-index: 1;
+    position: relative;
+    z-index: 2;
 
     @media (max-width: vars.$mediaMobile) {
         translate: 15px -12px;
@@ -217,6 +255,10 @@
         display: block;
     }
 
+    @media (max-width: vars.$mediaSmallMobile) {
+        display: none;
+    }
+
     .we-make__lines-bg {
         @include mixins.position(absolute, -1, top, left, 50%, 50%);
         translate: -80% -40%;
@@ -232,7 +274,7 @@
     line-height: 1.1;
     letter-spacing: -0.03em;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 
     &::before {
         content: "";
@@ -248,6 +290,11 @@
         z-index: 0;
         filter: blur(144px);
         opacity: 40%;
+        pointer-events: none;
+
+        @media (max-width: vars.$mediaTablet) {
+            display: none;
+        }
     }
 
     @media (max-width: vars.$mediaMobile) {
@@ -262,6 +309,25 @@
 .we-make__descr {
     line-height: 1.65;
     letter-spacing: -0.02em;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        display: none;
+        width: 30%;
+        aspect-ratio: 1.17;
+        background: rgba(217, 217, 217, 0.07);
+        border-radius: 50%;
+        @include mixins.position(absolute, -1, top, left, 50%, 50%);
+        translate: -25% -50%;
+        z-index: 0;
+        filter: blur(35px);
+
+        @media (max-width: vars.$mediaTablet) {
+            display: block;
+        }
+    }
 
     @media (max-width: vars.$mediaMobile) {
         font-size: functions.relSize(14px, vars.$basicFontSize);
@@ -283,6 +349,10 @@
         @include mixins.position(absolute, -1, bottom, left, -10%, -10%);
         z-index: 0;
         filter: blur(124px);
+
+        @media (max-width: vars.$mediaTablet) {
+            display: none;
+        }
     }
 }
 .photo-prev-wrapper {
