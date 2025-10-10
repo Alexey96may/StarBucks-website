@@ -1,1 +1,218 @@
 @use "../utils/vars";
+@use "../utils/mixins";
+
+.footer {
+    padding: 39px 2rem 45px;
+    background-color: #0b0c0d;
+    position: relative;
+    z-index: 1;
+
+    .container {
+        &::before {
+            content: "";
+            width: 40%;
+            aspect-ratio: 2/1;
+            @include mixins.position(absolute, -1, top, left, 50%, 50%);
+            background-color: #d9d9d9;
+            border-radius: 50%;
+            translate: -40% -50%;
+            pointer-events: none;
+            opacity: 0.03;
+            filter: blur(307px);
+
+            @media (max-width: vars.$mediaMobile) {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        padding: 21px 1rem;
+    }
+
+    .logo {
+        flex-grow: 1;
+        font-size: 38px;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        position: relative;
+
+        @media (max-width: vars.$mediaMobile) {
+            font-size: 25px;
+        }
+
+        &::before {
+            content: "";
+            width: 50%;
+            aspect-ratio: 2.7;
+            @include mixins.position(absolute, -1, top, left, 0, 0);
+            background: linear-gradient(
+                245deg,
+                rgba(35, 114, 73, 0.55) 0%,
+                rgba(53, 198, 107, 0.73) 52%
+            );
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.15;
+            filter: blur(96px);
+
+            @media (max-width: vars.$mediaMobile) {
+                width: 35%;
+                aspect-ratio: 3;
+                filter: blur(28px);
+            }
+        }
+
+        @media (max-width: vars.$mediaSmallTablet) {
+            flex-grow: 2;
+        }
+    }
+}
+
+.footer__links {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 88px;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 36px;
+    }
+}
+
+.footer__nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-grow: 2;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        order: 1;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        justify-content: space-between;
+        column-gap: 90px;
+        row-gap: 36px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    a {
+        color: #bbb3b3;
+        letter-spacing: 0.01em;
+        opacity: 43%;
+
+        @media (max-width: vars.$mediaMobile) {
+            font-size: 15px;
+        }
+    }
+
+    li:first-child a {
+        color: #bbb3b3;
+        opacity: 100%;
+    }
+}
+
+.footer__main-links {
+}
+.footer-link {
+}
+.footer__weMake-links {
+}
+.footer__products-links {
+}
+.footer__events-links {
+}
+.footer__contacts-links {
+}
+
+.button-up {
+    flex-grow: 1;
+    background: none;
+    padding: 0;
+    border: none;
+    text-align: end;
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        flex-grow: 2;
+    }
+
+    a {
+        cursor: pointer;
+    }
+}
+
+.button-up__img {
+    width: 84px;
+    height: 84px;
+
+    @media (max-width: vars.$mediaMobile) {
+        width: 53px;
+        height: 53px;
+    }
+}
+
+.footer__contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer__phone {
+    font-size: 1.3rem;
+    font-weight: 500;
+    background: linear-gradient(223deg, #237249 0%, #35c66b 100%);
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 16px;
+    }
+}
+
+.footer__inst {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 190%;
+        aspect-ratio: 1.2;
+        @include mixins.position(absolute, -1, top, left, 0, 0);
+        background: linear-gradient(
+            245deg,
+            rgba(35, 114, 73, 0.55) 0%,
+            rgba(53, 198, 107, 0.73) 52%
+        );
+        border-radius: 50%;
+        pointer-events: none;
+        translate: -40% 0;
+        opacity: 0.15;
+        filter: blur(39px);
+
+        @media (max-width: vars.$mediaMobile) {
+            translate: -25% -25%;
+            aspect-ratio: 1;
+            opacity: 0.07;
+            filter: blur(25px);
+        }
+    }
+
+    svg {
+        width: 46px;
+        height: 46px;
+
+        @media (max-width: vars.$mediaMobile) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
