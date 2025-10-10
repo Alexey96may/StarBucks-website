@@ -31,19 +31,19 @@ $mainFontFamily: "Montserrat", "Open Sans", sans-serif;
 $basicFontSize: 20px;
 
 @media (max-width: $mediaTablet) {
-    $basicFontSize: 18px;
+    $basicFontSize: 18px !global;
 }
 
 @media (max-width: $mediaSmallTablet) {
-    $basicFontSize: 16px;
+    $basicFontSize: 16px !global;
 }
 
 @media (max-width: $mediaMobile) {
-    $basicFontSize: 18px;
+    $basicFontSize: 18px !global;
 }
 
 @media (max-width: $mediaSmallMobile) {
-    $basicFontSize: 14px;
+    $basicFontSize: 14px !global;
 }
 
 $titleFontSize: 4rem;
