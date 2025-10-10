@@ -2,6 +2,8 @@
 
 **A website** for selling coffee. **The design** is from Internet.
 
+[Presentation](https://alexey96may.github.io/StarBucks-website/build/)
+
 ## Original Design Layout
 
 ![Alt-Original Design Layout](/design.webp)
