@@ -1,0 +1,199 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+@use "../utils/functions";
+@use "../ui/title-gradient";
+
+.contacts {
+    padding: 149px 1rem 0;
+
+    &__container {
+        display: flex;
+        padding-bottom: 100px;
+        position: relative;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        gap: 2.5rem;
+
+        &::before {
+            content: "";
+            width: 25%;
+            @include mixins.aspect(322px, 277px);
+            @include mixins.position(absolute, -1, bottom, right, 0, 0);
+            background-color: #d9d9d9;
+            border-radius: 50%;
+            translate: 25% 85%;
+            pointer-events: none;
+            opacity: 0.12;
+            filter: blur(150px);
+
+            @media (max-width: vars.$mediaMobile) {
+                display: none;
+            }
+        }
+    }
+}
+
+.contacts__room-wrapper {
+    position: relative;
+    flex-basis: 388px;
+
+    &::before {
+        content: "";
+        width: 84%;
+        @include mixins.aspect(328px, 262px);
+        @include mixins.position(absolute, -1, top, left, -10%, 0);
+        background: linear-gradient(
+            245deg,
+            rgba(35, 114, 73, 0.55) 0%,
+            rgba(53, 198, 107, 0.73) 52%
+        );
+        border-radius: 50%;
+        translate: -35% 0;
+        pointer-events: none;
+        opacity: 0.3;
+        filter: blur(130px);
+
+        @media (max-width: vars.$mediaMobile) {
+            width: 50%;
+            @include mixins.aspect(222px, 220px);
+            filter: blur(88px);
+        }
+    }
+}
+
+.contacts__have-marker {
+    z-index: 1;
+    width: 52%;
+    aspect-ratio: 1;
+    top: 20px;
+    left: -10px;
+
+    .have-marker__title {
+        font-size: clamp(1rem, 3.5vw, 2rem);
+        font-weight: 500;
+        line-height: 0.87;
+        letter-spacing: 0.02em;
+    }
+
+    .have-marker__title-bg {
+        max-width: 100%;
+    }
+
+    .have-marker__image {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.contacts__lines {
+    @include mixins.position(absolute, -1, top, right, 50%, 0);
+    translate: 10% -8%;
+}
+
+.we-make__lines-bg {
+    max-width: 85vw;
+    aspect-ratio: 1.56;
+}
+
+.contacts-image-wrapper {
+    position: relative;
+    z-index: 0;
+
+    &::before {
+        content: "";
+        display: block;
+        @include mixins.position(absolute, -1, top, left, 0, 0);
+        width: 100%;
+        height: 100%;
+        background-color: vars.$darkBgColor;
+        clip-path: polygon(0% 25%, 30% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+.contacts-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    translate: -34px -27px;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(0% 25%, 30% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.contacts__info {
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+    flex-basis: 40%;
+}
+
+.contacts__title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0.03rem;
+    color: vars.$lightTextColor;
+}
+
+.contacts__descr {
+    line-height: 1.6;
+    letter-spacing: 0.02rem;
+    margin-bottom: 4px;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 60%;
+        @include mixins.aspect(328px, 262px);
+        @include mixins.position(absolute, -1, top, left, 50%, 0);
+        background: linear-gradient(
+            245deg,
+            rgba(35, 114, 73, 0.55) 0%,
+            rgba(53, 198, 107, 0.73) 52%
+        );
+        border-radius: 50%;
+        translate: -25% -50%;
+        pointer-events: none;
+        opacity: 0.15;
+        filter: blur(130px);
+
+        @media (max-width: vars.$mediaMobile) {
+            background-color: #d9d9d9;
+            width: 34%;
+            @include mixins.aspect(111px, 96px);
+            opacity: 0.06;
+            filter: blur(52px);
+            @include mixins.position(absolute, -1, top, left, 50%, 0);
+            translate: 25% -50%;
+        }
+    }
+}
+
+.contact-group {
+}
+.contact {
+    & + & {
+        margin-top: 28px;
+    }
+}
+.contact__img {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+}
+.contact__inst {
+    width: 57px;
+    height: 57px;
+}
+.contact__phone {
+    width: 44px;
+    height: 44px;
+}
+.contact__text {
+    font-size: 1.6rem;
+    color: vars.$lightTextColor;
+    font-weight: 500;
+    margin-left: 14px;
+    line-height: 1.32;
+}
