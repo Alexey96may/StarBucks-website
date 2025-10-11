@@ -12,10 +12,12 @@ body {
     font-weight: 400;
     color: vars.$mainTextColor;
     overflow: hidden;
+    height: auto;
 }
 
 .body__fixed {
-    overflow: hidden;
+    overflow-y: hidden;
+    height: 100vw;
 }
 
 .container {

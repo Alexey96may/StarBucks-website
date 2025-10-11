@@ -36,6 +36,7 @@
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.03em;
+    z-index: 5;
 
     @media (max-width: vars.$mediaMobile) {
         font-size: 1.4rem;
@@ -49,10 +50,15 @@
 .nav {
     transition: vars.$basicTrans;
     @media (max-width: vars.$mediaSmallTablet) {
-        @include mixins.position(absolute, -1, top, left, 140px, -500px);
+        @include mixins.position(absolute, -1, top, left, 0, -500px);
+        padding: 120px;
         opacity: 0;
+        height: 100vh;
         width: 100%;
+        overflow-y: auto;
         visibility: hidden;
+        z-index: 3;
+        background-color: rgba(0, 0, 0, 0.9);
     }
 
     &.nav--appear {
@@ -74,14 +80,12 @@
     }
 }
 
-.nav-item {
-}
-
 .burger {
     background: none;
     outline: none;
     border: none;
     display: none;
+    z-index: 5;
 
     @media (max-width: vars.$mediaSmallTablet) {
         display: block;
