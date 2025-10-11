@@ -2,14 +2,30 @@
 @use "../utils/mixins";
 @use "../utils/functions";
 
+@keyframes AnimateButton {
+    0% {
+        background-position: 0% 50%;
+        color: vars.$lightTextColor;
+    }
+    50% {
+        background-position: 130% 50%;
+        color: vars.$hoverDarkColor;
+    }
+    100% {
+        background-position: 0% 50%;
+        color: vars.$lightTextColor;
+    }
+}
+
 .button {
     padding: 1em 4em;
+    background-color: vars.$gradDarkColor;
     @include mixins.linear-gradient(
         90deg,
         vars.$gradLightColor 0%,
-        vars.$gradDarkColor 100%,
-        vars.$gradLightColor 120%,
-        vars.$gradDarkColor 200%
+        vars.$gradDarkColor 50%,
+        vars.$gradDarkColor 50%,
+        vars.$gradLightColor 100%
     );
     font-size: 1.2rem;
     color: vars.$lightTextColor;
@@ -21,12 +37,13 @@
     overflow: hidden;
     transition: vars.$basicTrans;
     background-position: 0px 0px;
-    background-size: 100% 100%;
+    background-size: 200% 200%;
 
     &:hover,
     &:focus-visible {
-        background-position: 91% 100%;
+        animation: AnimateButton 4s infinite ease-in-out;
         @media (hover: none) {
+            animation: none;
         }
     }
 
