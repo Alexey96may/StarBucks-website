@@ -23,6 +23,7 @@
         @include mixins.position(absolute, -1, top, left, 50%, 50%);
         translate: -50% -50%;
         text-align: center;
+        z-index: 2;
 
         @media (max-width: vars.$mediaSmallTablet) {
             font-size: functions.relSize(24px, vars.$basicFontSize);
@@ -37,7 +38,7 @@
         max-width: 155px;
         display: block;
         position: relative;
-        z-index: 2;
+        z-index: 1;
 
         @media (max-width: vars.$mediaSmallTablet) {
             max-width: 125px;
