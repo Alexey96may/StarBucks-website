@@ -1,7 +1,0 @@
-/******/
-
-// ./src/ts/ui/burger.ts
-
-// webpackBootstrap
-
-//this.changeOverflow(this.BODY, "auto");

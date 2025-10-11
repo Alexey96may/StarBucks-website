@@ -1,18 +1,6 @@
 @use "../utils/vars";
 @use "../utils/mixins";
 
-@keyframes AnimateBurger {
-    0% {
-        stroke-dashoffset: 0px;
-    }
-    50% {
-        stroke-dashoffset: -50px;
-    }
-    100% {
-        stroke-dashoffset: 0px;
-    }
-}
-
 .header {
     padding: 48px 25px;
 
@@ -131,12 +119,6 @@
     height: 22px;
     stroke-dasharray: 100px;
     transition: vars.$basicTrans;
-}
-
-.burger--animate {
-    .burger__sprite {
-        animation: AnimateBurger 2s ease-in-out;
-    }
 }
 
 .burger {

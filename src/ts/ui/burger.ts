@@ -1,6 +1,6 @@
 export class Burger {
     #burgerButton = document.getElementById("burger") as HTMLInputElement;
-    #burgerSvg = document.querySelector(".burger svg");
+    #burgerSvg = document.querySelector(".burger svg") as HTMLElement;
     #headerNav = document.getElementById("headerNav");
     #body = document.querySelector("body");
     animationSpeed = 500;
@@ -30,31 +30,54 @@ export class Burger {
 
     classesToggle(): void {
         this.#burgerButton?.classList.toggle("burger--cancel");
-        setTimeout(() => {
+
+        if (this.#isMenuOpen) {
             this.#burgerButton?.classList.toggle("burger--cross");
-        }, this.animationSpeed / 2);
+        } else {
+            setTimeout(() => {
+                this.#burgerButton?.classList.toggle("burger--cross");
+            }, this.animationSpeed / 2);
+        }
         this.#headerNav?.classList.toggle("nav--appear");
         this.#body?.classList.toggle("body__fixed");
     }
 
     animationOn(): void {
         this.#burgerButton.disabled = true;
+        console.log(this.#isMenuOpen);
 
-        this.#burgerSvg.animate(
-            [
-                { strokeDashoffset: "0px" },
-                { strokeDashoffset: "-50px" },
-                { strokeDashoffset: "0px" },
-            ],
-            {
-                duration: this.animationSpeed,
-                iterations: 1,
-            }
-        );
+        if (this.#isMenuOpen) {
+            this.#burgerSvg.style.strokeDasharray = "100px";
 
-        setTimeout(() => {
-            this.#burgerButton.disabled = false;
-        }, this.animationSpeed);
+            this.#burgerSvg.animate(
+                [{ strokeDashoffset: "-50px" }, { strokeDashoffset: "0" }],
+                {
+                    duration: this.animationSpeed / 2,
+                    iterations: 1,
+                }
+            );
+
+            setTimeout(() => {
+                this.#burgerButton.disabled = false;
+            }, this.animationSpeed / 2);
+        } else {
+            this.#burgerSvg.style.strokeDasharray = "100px";
+            this.#burgerSvg.animate(
+                [
+                    { strokeDashoffset: "0px" },
+                    { strokeDashoffset: "-50px" },
+                    { strokeDashoffset: "0px" },
+                ],
+                {
+                    duration: this.animationSpeed,
+                    iterations: 1,
+                }
+            );
+
+            setTimeout(() => {
+                this.#burgerButton.disabled = false;
+            }, this.animationSpeed);
+        }
     }
 
     toggleMenu(): void {
