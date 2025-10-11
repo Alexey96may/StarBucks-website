@@ -36,6 +36,8 @@
     &__title-bg {
         max-width: 155px;
         display: block;
+        position: relative;
+        z-index: 2;
 
         @media (max-width: vars.$mediaSmallTablet) {
             max-width: 125px;
