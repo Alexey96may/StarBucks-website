@@ -6,14 +6,17 @@
     0% {
         background-position: 0% 50%;
         color: vars.$lightTextColor;
+        stroke: vars.$lightBgColor;
     }
     50% {
         background-position: 130% 50%;
         color: vars.$hoverDarkColor;
+        stroke: vars.$darkBgColor;
     }
     100% {
         background-position: 0% 50%;
         color: vars.$lightTextColor;
+        stroke: vars.$lightBgColor;
     }
 }
 

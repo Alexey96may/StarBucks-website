@@ -1,6 +1,18 @@
 @use "../utils/vars";
 @use "../utils/mixins";
 
+@keyframes AnimateBurger {
+    0% {
+        stroke-dashoffset: 0px;
+    }
+    50% {
+        stroke-dashoffset: -50px;
+    }
+    100% {
+        stroke-dashoffset: 0px;
+    }
+}
+
 .header {
     padding: 48px 25px;
 
@@ -117,4 +129,32 @@
     display: block;
     width: 43px;
     height: 22px;
+    stroke-dasharray: 100px;
+    transition: vars.$basicTrans;
+}
+
+.burger--animate {
+    .burger__sprite {
+        animation: AnimateBurger 2s ease-in-out;
+    }
+}
+
+.burger {
+    .line--streight {
+        display: block;
+    }
+
+    .line--cross {
+        display: none;
+    }
+}
+
+.burger--cross {
+    .line--streight {
+        display: none;
+    }
+
+    .line--cross {
+        display: block;
+    }
 }
