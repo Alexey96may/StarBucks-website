@@ -114,7 +114,8 @@
 .slider {
     display: flex;
     align-items: center;
-    overflow: auto;
+    // overflow: auto;
+    overflow: hidden;
     width: 100vw;
     gap: min(3rem, 5vw);
     padding: 0 8.7rem;
@@ -122,6 +123,7 @@
     @media (max-width: vars.$mediaSmallTablet) {
         padding: 0 functions.relSize(77px, vars.$basicFontSize) 0
             functions.relSize(57px, vars.$basicFontSize);
+        overflow: auto;
     }
 
     @media (max-width: vars.$mediaMobile) {
