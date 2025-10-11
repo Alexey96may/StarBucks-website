@@ -4,7 +4,15 @@
 @use "../ui/title-gradient";
 
 .events {
-    padding: 5rem 1rem 0;
+    padding: 100px 20px 0;
+
+    @media (max-width: vars.$mediaMobile) {
+        padding: functions.relSize(64px, vars.$basicFontSize) 20px 0;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        padding: functions.relSize(64px, vars.$basicFontSize) 14px 0;
+    }
 
     &__container {
         position: relative;
@@ -64,7 +72,7 @@
     flex-direction: row-reverse;
     align-items: center;
     gap: min(3.6rem, 8vw);
-    margin-bottom: 2.7rem;
+    margin-bottom: 54px;
 
     picture {
         @media (max-width: vars.$mediaTablet) {
@@ -86,7 +94,7 @@
 }
 
 .events__title {
-    font-size: 4rem;
+    font-size: functions.relSize(80px, vars.$basicFontSize);
     color: vars.$lightTextColor;
     font-weight: 800;
     line-height: 1.1;
@@ -112,6 +120,7 @@
     max-width: 456px;
     line-height: 1.63;
     letter-spacing: -0.02em;
+    font-size: functions.relSize(20px, vars.$basicFontSize);
 
     @media (max-width: vars.$mediaTablet) {
         max-width: 600px;
@@ -141,7 +150,7 @@
     }
 
     @media (max-width: vars.$mediaMobile) {
-        gap: 1rem;
+        gap: functions.relSize(17px, vars.$basicFontSize);
     }
 }
 

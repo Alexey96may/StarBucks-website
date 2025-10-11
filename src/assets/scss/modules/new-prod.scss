@@ -5,10 +5,14 @@
 
 .new-prod {
     position: relative;
-    padding: 5rem 1rem 0;
+    padding: 100px 24px 0;
 
     @media (max-width: vars.$mediaMobile) {
-        padding: functions.relSize(64px, vars.$basicFontSize) 1rem 0;
+        padding: functions.relSize(64px, vars.$basicFontSize) 24px 0;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        padding: functions.relSize(58px, vars.$basicFontSize) 14px 0;
     }
 
     &::before {
@@ -25,7 +29,7 @@
     }
 
     &__container {
-        margin-bottom: 3.15rem;
+        margin-bottom: 54px;
 
         @media (max-width: vars.$mediaMobile) {
             margin-bottom: functions.relSize(42px, vars.$basicFontSize);
@@ -36,19 +40,26 @@
 .new-prod__info {
     display: flex;
     align-items: center;
-    gap: min(functions.relSize(72px, vars.$basicFontSize), 8vw);
+    gap: functions.relSize(72px, vars.$basicFontSize);
 
     @media (max-width: vars.$mediaSmallTablet) {
         flex-direction: column;
     }
 
     @media (max-width: vars.$mediaMobile) {
-        gap: min(functions.relSize(36px, vars.$basicFontSize), 5vw);
+        gap: functions.relSize(42px, vars.$basicFontSize);
+        width: 75%;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        gap: functions.relSize(38px, vars.$basicFontSize);
+        width: 100%;
     }
 }
 
 .new-prod__title {
-    font-size: 4rem;
+    font-size: functions.relSize(80px, vars.$basicFontSize);
+    color: vars.$lightTextColor;
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.03em;
@@ -91,6 +102,7 @@
 }
 
 .new-prod__descr {
+    font-size: functions.relSize(20px, vars.$basicFontSize);
     line-height: 1.6;
     letter-spacing: -0.02em;
 
@@ -114,14 +126,14 @@
 
     @media (max-width: vars.$mediaMobile) {
         gap: functions.relSize(38px, vars.$basicFontSize);
-        padding: 0 functions.relSize(67px, vars.$basicFontSize) 0
-            functions.relSize(47px, vars.$basicFontSize);
+        padding: 0 functions.relSize(81px, vars.$basicFontSize) 0
+            functions.relSize(53px, vars.$basicFontSize);
     }
 
     @media (max-width: vars.$mediaSmallMobile) {
         gap: functions.relSize(28px, vars.$basicFontSize);
-        padding: 0 functions.relSize(47px, vars.$basicFontSize) 0
-            functions.relSize(27px, vars.$basicFontSize);
+        padding: 0 functions.relSize(60px, vars.$basicFontSize) 0
+            functions.relSize(34px, vars.$basicFontSize);
     }
 }
 

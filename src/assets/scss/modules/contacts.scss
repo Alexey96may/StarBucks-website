@@ -4,10 +4,14 @@
 @use "../ui/title-gradient";
 
 .contacts {
-    padding: 149px 2rem 0;
+    padding: 149px 25px 0;
 
     @media (max-width: vars.$mediaMobile) {
-        padding: 80px 1rem 0;
+        padding: 76px 25px 0;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        padding: 76px 14px 0;
     }
 
     &__container {
@@ -232,17 +236,23 @@
     flex-basis: 40%;
 
     @media (max-width: vars.$mediaMobile) {
+        width: 90%;
         gap: 36px;
         flex-basis: unset;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        width: 100%;
+        margin-top: -8px;
     }
 }
 
 .contacts__title {
-    font-size: 4rem;
+    font-size: functions.relSize(80px, vars.$basicFontSize);
+    color: vars.$lightTextColor;
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: 0.03rem;
-    color: vars.$lightTextColor;
 
     @media (max-width: vars.$mediaMobile) {
         font-size: functions.relSize(48px, vars.$basicFontSize);
@@ -254,6 +264,7 @@
 }
 
 .contacts__descr {
+    font-size: functions.relSize(20px, vars.$basicFontSize);
     line-height: 1.6;
     letter-spacing: 0.02rem;
     margin-bottom: 4px;
@@ -297,6 +308,16 @@
     }
 }
 
+.contact-group {
+    @media (max-width: vars.$mediaMobile) {
+        margin-top: -8px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        margin-top: -4px;
+    }
+}
+
 .contact {
     & + & {
         margin-top: 28px;
@@ -334,7 +355,7 @@
 }
 
 .contact__text {
-    font-size: 1.6rem;
+    font-size: functions.relSize(32px, vars.$basicFontSize);
     color: vars.$lightTextColor;
     font-weight: 500;
     line-height: 1.32;

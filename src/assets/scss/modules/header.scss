@@ -2,14 +2,14 @@
 @use "../utils/mixins";
 
 .header {
-    padding: 48px 2rem;
+    padding: 48px 25px;
 
     @media (max-width: vars.$mediaMobile) {
-        padding: 34px 1rem;
+        padding: 34px 25px;
     }
 
     @media (max-width: vars.$mediaSmallMobile) {
-        padding: 30px 1rem;
+        padding: 30px 14px;
     }
 
     .header__container {

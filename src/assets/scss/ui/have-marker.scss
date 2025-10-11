@@ -5,6 +5,7 @@
 .have-marker {
     @include mixins.position(absolute, -1, top, left, 12px, 15px);
     translate: -50% -50%;
+    z-index: 1;
 
     @media (max-width: vars.$mediaSmallTablet) {
         left: unset;

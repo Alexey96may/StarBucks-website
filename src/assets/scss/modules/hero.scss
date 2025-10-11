@@ -5,10 +5,14 @@
 @use "../ui/buttons";
 
 .hero {
-    padding: 1.6rem 2rem 0;
+    padding: 32px 25px 0;
 
     @media (max-width: vars.$mediaMobile) {
-        padding: 5px 1rem 0;
+        padding: 5px 25px 0;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        padding: 5px 14px 0;
     }
 
     &__container {
@@ -55,17 +59,16 @@
         );
         border-radius: 100%;
         filter: blur(175.5px);
+        opacity: 0.3;
         @include mixins.position(absolute, -1, bottom, right, 0, 0);
 
         @media (max-width: vars.$mediaMobile) {
-            @include mixins.linear-gradient(
-                245deg,
-                rgba(35, 114, 73, 0.55) 0%,
-                rgba(53, 198, 107, 0.73) 51.85%
-            );
+            width: 100%;
             right: unset;
-            left: 0;
-            translate: -40% 70%;
+            bottom: unset;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
             filter: blur(111px);
         }
     }
@@ -148,6 +151,7 @@
         aspect-ratio: 1;
         background-color: rgba(255, 255, 255, 0.04);
         border-radius: 100%;
+        opacity: 0.3;
         filter: blur(155px);
         @include mixins.position(absolute, -1, bottom, right, 2rem, 0);
 
@@ -187,11 +191,31 @@
 }
 
 .hero__title {
-    font-size: vars.$titleFontSize;
+    font-size: functions.relSize(80px, vars.$basicFontSize);
     color: vars.$lightTextColor;
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.03em;
+
+    &::before {
+        content: "";
+        display: none;
+        width: 40%;
+        aspect-ratio: 1.65;
+        @include mixins.linear-gradient(
+            245deg,
+            rgba(35, 114, 73, 0.55) 0%,
+            rgba(53, 198, 107, 0.73) 51.85%
+        );
+        border-radius: 100%;
+        opacity: 0.2;
+        filter: blur(93px);
+        @include mixins.position(absolute, -1, top, left, 0, 25%);
+
+        @media (max-width: vars.$mediaMobile) {
+            display: block;
+        }
+    }
 
     @media (max-width: vars.$mediaTablet) {
         font-size: functions.relSize(68px, vars.$basicFontSize);
@@ -213,9 +237,10 @@
 .hero__descr {
     line-height: 1.6;
     letter-spacing: -0.02em;
+    font-size: functions.relSize(20px, vars.$basicFontSize);
 
     @media (max-width: vars.$mediaTablet) {
-        font-size: functions.relSize(16px, vars.$basicFontSize);
+        font-size: functions.relSize(18px, vars.$basicFontSize);
     }
 
     @media (max-width: vars.$mediaSmallTablet) {

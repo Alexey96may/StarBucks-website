@@ -1,11 +1,20 @@
 @use "../utils/vars";
 @use "../utils/mixins";
+@use "../utils/functions";
 
 .footer {
-    padding: 39px 2rem 45px;
+    padding: 39px 25px 45px;
     background-color: #0b0c0d;
     position: relative;
     z-index: 1;
+
+    @media (max-width: vars.$mediaMobile) {
+        padding: 39px 25px 45px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        padding: 39px 14px;
+    }
 
     .container {
         &::before {
@@ -24,10 +33,6 @@
                 display: none;
             }
         }
-    }
-
-    @media (max-width: vars.$mediaMobile) {
-        padding: 21px 1rem;
     }
 
     .logo {
@@ -80,6 +85,7 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 36px;
+        margin-bottom: 36px;
     }
 }
 
@@ -90,11 +96,20 @@
     flex-grow: 2;
 
     @media (max-width: vars.$mediaSmallTablet) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         order: 1;
-        flex-wrap: wrap;
         flex-basis: 100%;
-        justify-content: space-between;
-        column-gap: 90px;
+        justify-content: flex-start;
+        column-gap: 0.5rem;
+        row-gap: 36px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 2rem;
         row-gap: 36px;
     }
 
@@ -102,12 +117,33 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
+
+        &:nth-child(3n + 2) {
+            @media (max-width: vars.$mediaSmallTablet) {
+                justify-self: center;
+            }
+        }
+
+        &:nth-child(3n + 3) {
+            @media (max-width: vars.$mediaSmallTablet) {
+                justify-self: end;
+            }
+        }
+
+        @media (max-width: vars.$mediaSmallTablet) {
+            width: 90px;
+        }
     }
 
     a {
+        font-size: functions.relSize(20px, vars.$basicFontSize);
         color: #bbb3b3;
         letter-spacing: 0.01em;
         opacity: 43%;
+
+        @media (max-width: vars.$mediaTablet) {
+            font-size: 14px;
+        }
 
         @media (max-width: vars.$mediaMobile) {
             font-size: 15px;
@@ -118,19 +154,6 @@
         color: #bbb3b3;
         opacity: 100%;
     }
-}
-
-.footer__main-links {
-}
-.footer-link {
-}
-.footer__weMake-links {
-}
-.footer__products-links {
-}
-.footer__events-links {
-}
-.footer__contacts-links {
 }
 
 .button-up {

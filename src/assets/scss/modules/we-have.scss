@@ -4,14 +4,14 @@
 @use "../ui/have-marker";
 
 .we-have {
-    padding: functions.relSize(112px, vars.$basicFontSize) 2.5rem 0;
+    padding: functions.relSize(112px, vars.$basicFontSize) 25px 0;
 
     @media (max-width: vars.$mediaMobile) {
-        padding: functions.relSize(112px, vars.$basicFontSize) 2.5rem 0;
+        padding: functions.relSize(64px, vars.$basicFontSize) 25px 0;
     }
 
     @media (max-width: vars.$mediaSmallMobile) {
-        padding: functions.relSize(60px, vars.$basicFontSize) 1rem 0;
+        padding: functions.relSize(54px, vars.$basicFontSize) 14px 0;
     }
 
     .container {
@@ -37,12 +37,33 @@
         }
     }
 
+    &__cards-wrapper {
+        position: relative;
+        max-width: 80%;
+        margin: 0 auto;
+
+        @media (max-width: vars.$mediaTablet) {
+            max-width: 100%;
+        }
+
+        @media (max-width: vars.$mediaSmallTablet) {
+            max-width: functions.relSize(400px, vars.$basicFontSize);
+        }
+
+        @media (max-width: vars.$mediaMobile) {
+            max-width: functions.relSize(220px, vars.$basicFontSize);
+        }
+
+        @media (max-width: vars.$mediaSmallMobile) {
+            max-width: 100%;
+        }
+    }
+
     &__cards {
         display: flex;
         justify-content: center;
         align-items: flex-start;
         overflow-x: auto;
-        margin: 0 auto;
         padding: 44px 48px 36px;
         gap: min(6.4rem, 8vw);
         border-radius: functions.relSize(46px, vars.$basicFontSize);
@@ -120,9 +141,6 @@
     translate: -50% -50%;
     width: auto;
     flex-shrink: 0;
-}
-
-.have-card__info {
 }
 
 .have-card__title {

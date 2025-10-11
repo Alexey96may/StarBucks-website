@@ -6,13 +6,14 @@
 @use "../ui/buttons";
 
 .we-make {
-    padding: 9rem 1rem 0;
+    padding: 165px 25px 0;
 
     @media (max-width: vars.$mediaMobile) {
-        padding: 3rem 1rem 0;
+        padding: functions.relSize(75px, vars.$basicFontSize) 25px 0;
     }
+
     @media (max-width: vars.$mediaSmallMobile) {
-        padding: 4rem 1rem 0;
+        padding: functions.relSize(66px, vars.$basicFontSize) 14px 0;
     }
 
     &__container {
@@ -268,7 +269,7 @@
 }
 
 .we-make__title {
-    font-size: 4rem;
+    font-size: functions.relSize(80px, vars.$basicFontSize);
     color: vars.$lightTextColor;
     font-weight: 800;
     line-height: 1.1;
@@ -308,6 +309,7 @@
 
 .we-make__descr {
     line-height: 1.65;
+    font-size: functions.relSize(20px, vars.$basicFontSize);
     letter-spacing: -0.02em;
     position: relative;
     z-index: 1;
