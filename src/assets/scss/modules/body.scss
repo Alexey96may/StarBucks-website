@@ -16,8 +16,11 @@ body {
 }
 
 .body__fixed {
-    overflow-y: hidden;
-    height: 100vw;
+    @media (max-width: vars.$mediaSmallTablet) {
+        overflow-y: hidden;
+
+        height: 100vh;
+    }
 }
 
 .container {

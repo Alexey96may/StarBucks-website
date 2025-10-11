@@ -326,6 +326,19 @@
             margin-top: 19px;
         }
     }
+
+    a {
+        transition: vars.$basicTrans;
+
+        &:hover,
+        &:focus-visible {
+            opacity: 40%;
+
+            @media (hover: none) {
+                opacity: 100%;
+            }
+        }
+    }
 }
 
 .contact__img {

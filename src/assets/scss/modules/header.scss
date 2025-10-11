@@ -49,16 +49,21 @@
 
 .nav {
     transition: vars.$basicTrans;
+
     @media (max-width: vars.$mediaSmallTablet) {
         @include mixins.position(absolute, -1, top, left, 0, -500px);
-        padding: 120px;
+        padding: 150px 25px 25px;
         opacity: 0;
-        height: 100vh;
+        height: 100%;
         width: 100%;
         overflow-y: auto;
         visibility: hidden;
         z-index: 3;
         background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        padding: 120px 25px 25px;
     }
 
     &.nav--appear {
@@ -77,6 +82,22 @@
 
     @media (max-width: vars.$mediaSmallTablet) {
         flex-direction: column;
+    }
+}
+
+.nav-item {
+    a {
+        color: vars.$mainTextColor;
+        transition: vars.$basicTrans;
+
+        &:hover,
+        &:focus-visible {
+            color: vars.$hoverLinkColor;
+
+            @media (hover: none) {
+                color: vars.$mainTextColor;
+            }
+        }
     }
 }
 

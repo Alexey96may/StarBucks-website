@@ -7,7 +7,9 @@
     @include mixins.linear-gradient(
         90deg,
         vars.$gradLightColor 0%,
-        vars.$gradDarkColor 100%
+        vars.$gradDarkColor 100%,
+        vars.$gradLightColor 120%,
+        vars.$gradDarkColor 200%
     );
     font-size: 1.2rem;
     color: vars.$lightTextColor;
@@ -17,6 +19,16 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    transition: vars.$basicTrans;
+    background-position: 0px 0px;
+    background-size: 100% 100%;
+
+    &:hover,
+    &:focus-visible {
+        background-position: 91% 100%;
+        @media (hover: none) {
+        }
+    }
 
     @media (max-width: vars.$mediaTablet) {
         font-size: functions.relSize(20px, vars.$basicFontSize);

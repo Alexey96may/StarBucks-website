@@ -147,7 +147,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    width: 13.85rem;
+    width: functions.relSize(277px, vars.$basicFontSize);
     padding: 1.6rem 1.5rem;
     background: linear-gradient(#121517 0 0) padding-box,
         linear-gradient(
